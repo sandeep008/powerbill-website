@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Inter", Roboto, sans-serif;
+
+  --color-brand-50: #e8f5e9;
+  --color-brand-100: #c8e6c9;
+  --color-brand-300: #66bb6a;
+  --color-brand-500: #2e7d32;
+  --color-brand-600: #1b5e20;
+  --color-brand-700: #0d3311;
+
+  --color-gold-100: #f4d97a;
+  --color-gold-400: #d4a017;
+  --color-gold-600: #8f6b0f;
+
+  --color-canvas: #f7f7f2;
+  --color-ink: #16211a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-canvas text-ink antialiased;
+}
