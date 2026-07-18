@@ -132,7 +132,14 @@ export function Pricing() {
             download
             className="inline-flex items-center justify-center rounded-lg border border-white/30 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"
           >
-            Download printable brochure
+            Download brochure (English)
+          </a>
+          <a
+            href={`${import.meta.env.BASE_URL}brochure/powerbill-flyer-mr.png`}
+            download
+            className="inline-flex items-center justify-center rounded-lg border border-white/30 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"
+          >
+            ब्रोशर डाउनलोड करा (मराठी)
           </a>
         </div>
       </div>
