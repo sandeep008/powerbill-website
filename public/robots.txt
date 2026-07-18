@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://powerbilltech.github.io/powerbill-website/sitemap.xml
