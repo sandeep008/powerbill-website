@@ -1,8 +1,10 @@
-import { Check } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 
 const plans = [
   {
     name: "Trial",
+    price: "₹0",
+    period: "14 days",
     tagline: "Try it on your own PC",
     cta: "Download free trial",
     ctaHref: "#top",
@@ -10,26 +12,38 @@ const plans = [
   },
   {
     name: "Monthly",
+    price: "₹999",
+    period: "/ month",
     tagline: "Flexible, cancel anytime",
-    cta: "Contact for pricing",
+    cta: "Get Started",
     ctaHref: "#contact",
     highlight: false,
   },
   {
     name: "Quarterly",
-    tagline: "Best for most shops",
-    cta: "Contact for pricing",
-    ctaHref: "#contact",
-    highlight: true,
-  },
-  {
-    name: "Yearly",
-    tagline: "Best value, established shops",
-    cta: "Contact for pricing",
+    price: "₹2,699",
+    period: "/ 3 months",
+    tagline: "Save 10% vs. monthly",
+    cta: "Get Started",
     ctaHref: "#contact",
     highlight: false,
   },
+  {
+    name: "Yearly",
+    price: "₹8,999",
+    period: "/ year",
+    tagline: "Save 25% vs. monthly",
+    cta: "Get Started",
+    ctaHref: "#contact",
+    highlight: true,
+  },
 ];
+
+const oneTimeOffer = {
+  original: "₹24,999",
+  offer: "₹9,999",
+  savingsPct: "60%",
+};
 
 const included = [
   "Full POS billing (all 3 styles)",
@@ -65,6 +79,10 @@ export function Pricing() {
             <div className={`text-sm font-semibold ${plan.highlight ? "text-brand-50" : "text-brand-600"}`}>
               {plan.name}
             </div>
+            <div className="mt-3 flex items-baseline gap-1.5">
+              <span className="text-3xl font-bold tracking-tight">{plan.price}</span>
+              <span className={`text-sm ${plan.highlight ? "text-white/70" : "text-ink/50"}`}>{plan.period}</span>
+            </div>
             <div className={`mt-1 text-sm ${plan.highlight ? "text-white/80" : "text-ink/50"}`}>
               {plan.tagline}
             </div>
@@ -82,7 +100,44 @@ export function Pricing() {
         ))}
       </div>
 
-      <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-black/5 bg-white p-8">
+      <div className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-2xl border border-gold-400/40 bg-gradient-to-br from-brand-700 to-brand-600 p-8 text-white shadow-xl">
+        <div className="flex items-center gap-2 text-gold-400">
+          <Sparkles className="size-4" />
+          <span className="text-xs font-bold uppercase tracking-wider">Limited-time launch offer</span>
+        </div>
+        <div className="mt-3 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div className="text-xl font-bold">One-Time Purchase — 3 Years Support &amp; Updates</div>
+            <p className="mt-1 text-sm text-white/70">
+              Pay once, own it for 3 years. No renewals to track, no surprise invoices.
+            </p>
+          </div>
+          <div className="shrink-0 text-left sm:text-right">
+            <div className="flex items-baseline gap-2 sm:justify-end">
+              <span className="text-lg text-white/50 line-through">{oneTimeOffer.original}</span>
+              <span className="text-3xl font-bold text-gold-400">{oneTimeOffer.offer}</span>
+            </div>
+            <div className="text-xs font-semibold text-gold-400">Save {oneTimeOffer.savingsPct} — one-time payment</div>
+          </div>
+        </div>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-lg bg-gold-400 px-5 py-2.5 text-sm font-semibold text-brand-700 hover:bg-gold-100"
+          >
+            Claim the one-time deal
+          </a>
+          <a
+            href={`${import.meta.env.BASE_URL}brochure/powerbill-flyer.png`}
+            download
+            className="inline-flex items-center justify-center rounded-lg border border-white/30 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"
+          >
+            Download printable brochure
+          </a>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-black/5 bg-white p-8">
         <div className="text-sm font-semibold text-ink">Every plan includes</div>
         <ul className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
           {included.map((item) => (

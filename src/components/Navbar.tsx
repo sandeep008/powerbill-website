@@ -10,6 +10,7 @@ const links = [
   { href: "#pos-styles", label: "POS Styles" },
   { href: "#pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
+  { href: "#feedback", label: "Feedback" },
   { href: "#contact", label: "Support" },
 ];
 

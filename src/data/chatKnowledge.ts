@@ -34,7 +34,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
     quickReply: "How much does it cost?",
     keywords: ["price", "pricing", "cost", "plan", "subscription", "fee", "money", "pay"],
     answer:
-      "PowerBill has a free trial plus Monthly, Quarterly, and Yearly plans — no per-transaction fees. For exact pricing, chat with us on WhatsApp or email support@powerbilltech.in and we'll sort you out quickly.",
+      "Monthly is ₹999, Quarterly ₹2,699 (save 10%), and Yearly ₹8,999 (save 25%) — no per-transaction fees. There's also a launch offer: a one-time purchase with 3 years of support & updates for ₹9,999 (regular price ₹24,999, save 60%). Start with a free 14-day trial, no card needed.",
   },
   {
     id: "pos-styles",
