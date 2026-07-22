@@ -16,8 +16,8 @@ const styles = [
   {
     icon: UtensilsCrossed,
     name: "Restaurant",
-    tagline: "Table service",
-    body: "Table/floor view with per-table running orders, hold-and-resume across a visit, and kitchen ticket printing.",
+    tagline: "Table service, Dine-In & Parcel",
+    body: "A floor view grouped by section with live table status (Free, Running, KOT sent, Bill printed), category-browsed menu ordering, a dedicated Parcel/takeaway flow, and kitchen ticket printing.",
   },
 ];
 

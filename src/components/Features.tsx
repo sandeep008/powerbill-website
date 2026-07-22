@@ -4,6 +4,7 @@ import {
   Cloud,
   MessageSquareText,
   Package,
+  Palette,
   Receipt,
   ShieldCheck,
   Users,
@@ -13,7 +14,7 @@ const features = [
   {
     icon: Receipt,
     title: "Fast, flexible billing",
-    body: "Barcode or search-based checkout, editable cart, discounts & tax, hold/resume bills, and every payment mode — cash, card, UPI, credit, mixed.",
+    body: "Barcode or search-based checkout, editable cart, discounts & tax, hold/resume bills, and every payment mode — cash, card, UPI, credit, mixed. Keyboard-only checkout in 3 keystrokes: scan, Enter, Enter.",
   },
   {
     icon: Package,
@@ -54,6 +55,11 @@ const features = [
     icon: Barcode,
     title: "Built for India",
     body: "English, Hindi & Marathi UI, GST-ready from day one, and starter product catalogs so you're never starting from a blank list.",
+  },
+  {
+    icon: Palette,
+    title: "Make it yours",
+    body: "Pick from Standard, Ocean Blue, or Royal Purple themes — applied consistently across the header, navigation, and every screen.",
   },
 ];
 
