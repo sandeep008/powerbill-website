@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { MessageCircle, ShieldCheck } from "lucide-react";
 import screenshot from "../assets/brand/dashboard-screenshot.png";
 import { DownloadButton } from "./DownloadButton";
@@ -27,13 +28,13 @@ export function Hero() {
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <DownloadButton variant="hero" />
-            <a
-              href="#contact"
+            <Link
+              to="/support"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-ink/15 px-7 py-4 text-base font-semibold text-ink hover:bg-ink/5"
             >
               <MessageCircle className="size-5" />
               Request a Demo
-            </a>
+            </Link>
           </div>
 
           <p className="mt-4 text-sm text-ink/50">Free trial · No credit card needed · Windows 10/11</p>

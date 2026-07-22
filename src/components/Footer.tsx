@@ -1,36 +1,24 @@
+import { Link } from "react-router-dom";
 import mark from "../assets/brand/mark.png";
+import { useAnchorNav } from "../hooks/useAnchorNav";
 
-const columns = [
+const companyLinks = [
+  { label: "User Guide", to: "/guide" },
+  { label: "Support & FAQ", to: "/support" },
+  { label: "Request a Demo", to: "/support" },
+];
+
+const legalLinks = [
   {
-    title: "Product",
-    links: [
-      { label: "Features", href: "#features" },
-      { label: "POS Styles", href: "#pos-styles" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "Download", href: "#top" },
-    ],
+    label: "License Agreement",
+    href: "https://github.com/powerbilltech/powerbill-releases/releases/latest",
   },
-  {
-    title: "Company",
-    links: [
-      { label: "FAQ", href: "#faq" },
-      { label: "Support", href: "#contact" },
-      { label: "Request a Demo", href: "#contact" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      {
-        label: "License Agreement",
-        href: "https://github.com/powerbilltech/powerbill-releases/releases/latest",
-      },
-      { label: "Releases", href: "https://github.com/powerbilltech/powerbill-releases/releases" },
-    ],
-  },
+  { label: "Releases", href: "https://github.com/powerbilltech/powerbill-releases/releases" },
 ];
 
 export function Footer() {
+  const scrollToAnchor = useAnchorNav();
+
   return (
     <footer className="border-t border-black/5 bg-white">
       <div className="mx-auto max-w-7xl px-6 py-14">
@@ -45,20 +33,57 @@ export function Footer() {
             </p>
           </div>
 
-          {columns.map((col) => (
-            <div key={col.title}>
-              <div className="text-sm font-semibold text-ink">{col.title}</div>
-              <ul className="mt-3 space-y-2.5">
-                {col.links.map((l) => (
-                  <li key={l.label}>
-                    <a href={l.href} className="text-sm text-ink/50 hover:text-ink">
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div>
+            <div className="text-sm font-semibold text-ink">Product</div>
+            <ul className="mt-3 space-y-2.5">
+              <li>
+                <button onClick={() => scrollToAnchor("features")} className="text-sm text-ink/50 hover:text-ink">
+                  Features
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToAnchor("pos-styles")} className="text-sm text-ink/50 hover:text-ink">
+                  POS Styles
+                </button>
+              </li>
+              <li>
+                <Link to="/pricing" className="text-sm text-ink/50 hover:text-ink">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link to="/" className="text-sm text-ink/50 hover:text-ink">
+                  Download
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="text-sm font-semibold text-ink">Company</div>
+            <ul className="mt-3 space-y-2.5">
+              {companyLinks.map((l) => (
+                <li key={l.label}>
+                  <Link to={l.to} className="text-sm text-ink/50 hover:text-ink">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <div className="text-sm font-semibold text-ink">Legal</div>
+            <ul className="mt-3 space-y-2.5">
+              {legalLinks.map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className="text-sm text-ink/50 hover:text-ink">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-black/5 pt-6 text-xs text-ink/40 sm:flex-row sm:items-center sm:justify-between">

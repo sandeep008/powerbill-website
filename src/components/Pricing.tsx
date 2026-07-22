@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Check, Sparkles } from "lucide-react";
 
 const plans = [
@@ -7,7 +8,7 @@ const plans = [
     period: "14 days",
     tagline: "Try it on your own PC",
     cta: "Download free trial",
-    ctaHref: "#top",
+    ctaTo: "/",
     highlight: false,
   },
   {
@@ -16,7 +17,7 @@ const plans = [
     period: "/ month",
     tagline: "Flexible, cancel anytime",
     cta: "Get Started",
-    ctaHref: "#contact",
+    ctaTo: "/support",
     highlight: false,
   },
   {
@@ -25,7 +26,7 @@ const plans = [
     period: "/ 3 months",
     tagline: "Save 10% vs. monthly",
     cta: "Get Started",
-    ctaHref: "#contact",
+    ctaTo: "/support",
     highlight: false,
   },
   {
@@ -34,7 +35,7 @@ const plans = [
     period: "/ year",
     tagline: "Save 25% vs. monthly",
     cta: "Get Started",
-    ctaHref: "#contact",
+    ctaTo: "/support",
     highlight: true,
   },
 ];
@@ -86,8 +87,8 @@ export function Pricing() {
             <div className={`mt-1 text-sm ${plan.highlight ? "text-white/80" : "text-ink/50"}`}>
               {plan.tagline}
             </div>
-            <a
-              href={plan.ctaHref}
+            <Link
+              to={plan.ctaTo}
               className={`mt-6 inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors ${
                 plan.highlight
                   ? "bg-white text-brand-700 hover:bg-brand-50"
@@ -95,7 +96,7 @@ export function Pricing() {
               }`}
             >
               {plan.cta}
-            </a>
+            </Link>
           </div>
         ))}
       </div>
@@ -121,12 +122,12 @@ export function Pricing() {
           </div>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <a
-            href="#contact"
+          <Link
+            to="/support"
             className="inline-flex items-center justify-center rounded-lg bg-gold-400 px-5 py-2.5 text-sm font-semibold text-brand-700 hover:bg-gold-100"
           >
             Claim the one-time deal
-          </a>
+          </Link>
           <a
             href={`${import.meta.env.BASE_URL}brochure/powerbill-flyer.png`}
             download

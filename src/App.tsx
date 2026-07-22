@@ -1,40 +1,43 @@
+import { useEffect } from "react";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { TrustStrip } from "./components/TrustStrip";
-import { VideoDemo } from "./components/VideoDemo";
-import { FullDemoVideo } from "./components/FullDemoVideo";
-import { RestaurantDemoVideo } from "./components/RestaurantDemoVideo";
-import { Features } from "./components/Features";
-import { PosStyles } from "./components/PosStyles";
-import { Pricing } from "./components/Pricing";
-import { Faq } from "./components/Faq";
-import { Feedback } from "./components/Feedback";
-import { Contact } from "./components/Contact";
-import { CtaBand } from "./components/CtaBand";
 import { Footer } from "./components/Footer";
 import { ChatWidget } from "./components/ChatWidget";
+import { Home } from "./pages/Home";
+import { PricingPage } from "./pages/PricingPage";
+import { Guide } from "./pages/Guide";
+import { Support } from "./pages/Support";
+
+/** Resets scroll position on route change, unless Home is about to scroll to an anchor. */
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollTo = (location.state as { scrollTo?: string } | null)?.scrollTo;
+    if (!scrollTo) window.scrollTo(0, 0);
+  }, [location.pathname, location.state]);
+
+  return null;
+}
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <TrustStrip />
-        <VideoDemo />
-        <FullDemoVideo />
-        <Features />
-        <PosStyles />
-        <RestaurantDemoVideo />
-        <Pricing />
-        <Faq />
-        <Feedback />
-        <Contact />
-        <CtaBand />
-      </main>
-      <Footer />
-      <ChatWidget />
-    </div>
+    <HashRouter>
+      <div className="min-h-screen">
+        <ScrollToTop />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/guide" element={<Guide />} />
+            <Route path="/support" element={<Support />} />
+          </Routes>
+        </main>
+        <Footer />
+        <ChatWidget />
+      </div>
+    </HashRouter>
   );
 }
 

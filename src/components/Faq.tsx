@@ -30,10 +30,6 @@ const faqs = [
     q: "Can multiple staff use it with different access levels?",
     a: "Yes — role-based permissions let you control exactly what each user (Admin, Manager, Cashier, or a custom role) can see and do.",
   },
-  {
-    q: "How do I get support?",
-    a: "Reach us via WhatsApp, phone, or email — see the Support section below.",
-  },
 ];
 
 export function Faq() {
