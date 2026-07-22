@@ -1,24 +1,19 @@
 import { useRef, useState } from "react";
 import { Play } from "lucide-react";
-
-// TODO: once the restaurant demo video is recorded, add a poster frame at
-// src/assets/brand/restaurant-demo-poster.png and pass it as the <video poster>
-// below (see VideoDemo.tsx / FullDemoVideo.tsx for the pattern). Left out for now
-// since importing a not-yet-existing asset would break the production build.
+import poster from "../assets/brand/restaurant-demo-poster.png";
 
 const STEPS = [
-  "Switch on Restaurant mode & manage tables by section",
-  "Add a menu item — no barcode or stock fields",
-  "Floor view: sections, live table status",
-  "Category ordering, Send to Kitchen, Print Bill",
-  "3-key checkout: scan, Enter, Enter",
-  "Parcel orders & Dine-In vs Parcel report",
+  "Dine-In: floor view grouped by section, live table status",
+  "Category ordering & Send to Kitchen",
+  "Parcel: skip the floor view, order & complete",
+  "Dine-In vs Parcel report",
+  "Dashboard reflects both sales instantly",
 ];
 
 /**
- * The Restaurant template, start to finish -- table setup, a menu item added live,
- * a full dine-in order from floor view through kitchen ticket to payment, then a
- * parcel order. Same click-to-play, real-recording pattern as FullDemoVideo.
+ * The Restaurant template in action -- a dine-in order from floor view through
+ * checkout, a parcel order, the new Dine-In vs Parcel report, and the dashboard.
+ * Same click-to-play, real-recording pattern as FullDemoVideo.
  */
 export function RestaurantDemoVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -37,8 +32,8 @@ export function RestaurantDemoVideo() {
             Restaurant billing, start to finish
           </h2>
           <p className="mt-4 text-lg text-ink/60">
-            Table setup, a menu item added on the fly, a full dine-in order from the floor view
-            to a printed bill, and a parcel order — one continuous, real recording.
+            A dine-in order from the floor view to a completed sale, a parcel order, and the
+            Dine-In vs Parcel report on the dashboard — one continuous, real recording.
           </p>
         </div>
 
@@ -57,6 +52,7 @@ export function RestaurantDemoVideo() {
           <video
             ref={videoRef}
             src={`${import.meta.env.BASE_URL}demo/powerbill-restaurant-demo.mp4`}
+            poster={poster}
             controls={playing}
             playsInline
             className="w-full"
