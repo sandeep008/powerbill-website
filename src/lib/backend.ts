@@ -28,9 +28,10 @@ export async function postToSheet(action: string, payload: Record<string, unknow
   return res.json();
 }
 
-export async function getFromSheet(action: string): Promise<unknown> {
+export async function getFromSheet(action: string, params: Record<string, string> = {}): Promise<unknown> {
   if (!isBackendConfigured()) throw new Error("Backend not configured yet");
-  const res = await fetch(`${APPS_SCRIPT_URL}?action=${encodeURIComponent(action)}`);
+  const query = new URLSearchParams({ action, ...params }).toString();
+  const res = await fetch(`${APPS_SCRIPT_URL}?${query}`);
   if (!res.ok) throw new Error(`Request failed: ${res.status}`);
   return res.json();
 }
