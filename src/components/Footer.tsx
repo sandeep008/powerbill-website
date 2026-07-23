@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import mark from "../assets/brand/mark.png";
 import { useAnchorNav } from "../hooks/useAnchorNav";
+import { VisitorCounter } from "./VisitorCounter";
 
 const companyLinks = [
   { label: "User Guide", to: "/guide" },
+  { label: "Register your Business", to: "/register" },
   { label: "Support & FAQ", to: "/support" },
   { label: "Request a Demo", to: "/support" },
 ];
@@ -86,9 +88,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-black/5 pt-6 text-xs text-ink/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-2 border-t border-black/5 pt-6 text-xs text-ink/40 sm:flex-row sm:items-center sm:justify-between">
           <span>&copy; {new Date().getFullYear()} PowerBill Technologies Pvt. Ltd. All rights reserved.</span>
-          <span>Pune, Maharashtra, India</span>
+          <span className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
+            <VisitorCounter />
+            <span>Pune, Maharashtra, India</span>
+          </span>
         </div>
       </div>
     </footer>

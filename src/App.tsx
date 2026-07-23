@@ -7,6 +7,7 @@ import { Home } from "./pages/Home";
 import { PricingPage } from "./pages/PricingPage";
 import { Guide } from "./pages/Guide";
 import { Support } from "./pages/Support";
+import { Register } from "./pages/Register";
 
 /** Resets scroll position on route change, unless Home is about to scroll to an anchor. */
 function ScrollToTop() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/guide" element={<Guide />} />
             <Route path="/support" element={<Support />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </main>
         <Footer />

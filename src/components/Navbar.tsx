@@ -8,6 +8,7 @@ import { useAnchorNav } from "../hooks/useAnchorNav";
 const pageLinks = [
   { to: "/pricing", label: "Pricing" },
   { to: "/guide", label: "User Guide" },
+  { to: "/register", label: "Register" },
   { to: "/support", label: "Support" },
 ];
 
