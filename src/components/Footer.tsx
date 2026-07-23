@@ -10,21 +10,13 @@ const companyLinks = [
   { label: "Request a Demo", to: "/support" },
 ];
 
-const legalLinks = [
-  {
-    label: "License Agreement",
-    href: "https://github.com/powerbilltech/powerbill-releases/releases/latest",
-  },
-  { label: "Releases", href: "https://github.com/powerbilltech/powerbill-releases/releases" },
-];
-
 export function Footer() {
   const scrollToAnchor = useAnchorNav();
 
   return (
     <footer className="border-t border-black/5 bg-white">
       <div className="mx-auto max-w-7xl px-6 py-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
               <img src={mark} alt="" className="size-8" />
@@ -69,19 +61,6 @@ export function Footer() {
                   <Link to={l.to} className="text-sm text-ink/50 hover:text-ink">
                     {l.label}
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <div className="text-sm font-semibold text-ink">Legal</div>
-            <ul className="mt-3 space-y-2.5">
-              {legalLinks.map((l) => (
-                <li key={l.label}>
-                  <a href={l.href} className="text-sm text-ink/50 hover:text-ink">
-                    {l.label}
-                  </a>
                 </li>
               ))}
             </ul>
