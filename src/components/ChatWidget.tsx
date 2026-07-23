@@ -8,7 +8,7 @@ interface Message {
   text: string;
 }
 
-const WHATSAPP_NUMBER = "918850608516";
+const WHATSAPP_NUMBER = "919096322912";
 const WHATSAPP_TEXT = encodeURIComponent("Hi PowerBill team, I have a question I couldn't find an answer to on the site.");
 
 const GREETING: Message = {

@@ -1,6 +1,6 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
-const WHATSAPP_NUMBER = "918850608516";
+const WHATSAPP_NUMBER = "919096322912";
 const WHATSAPP_DEMO_TEXT = encodeURIComponent(
   "Hi PowerBill team, I'd like to request a demo of PowerBill for my shop."
 );
@@ -44,7 +44,7 @@ export function Contact() {
           <dl className="mt-10 space-y-4">
             <div className="flex items-center gap-3">
               <Phone className="size-5 text-brand-600" />
-              <dd className="text-sm text-ink/70">+91 88506 08516</dd>
+              <dd className="text-sm text-ink/70">+91 90963 22912</dd>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="size-5 text-brand-600" />
