@@ -25,3 +25,29 @@ html {
 body {
   @apply bg-canvas text-ink antialiased;
 }
+
+/* Floating 3D screenshot effect -- tilted by default, straightens on hover.
+   See components/Tilt3D.tsx. */
+.tilt-3d-wrap {
+  perspective: 1600px;
+}
+.tilt-3d {
+  transform: rotateX(8deg) rotateY(-14deg) scale(0.96);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.tilt-3d-wrap:hover .tilt-3d,
+.tilt-3d-wrap:focus-within .tilt-3d {
+  transform: rotateX(0deg) rotateY(0deg) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tilt-3d {
+    transform: none;
+    transition: none;
+  }
+  .tilt-3d-wrap:hover .tilt-3d,
+  .tilt-3d-wrap:focus-within .tilt-3d {
+    transform: none;
+  }
+}

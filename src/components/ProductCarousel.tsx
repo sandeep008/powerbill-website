@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Tilt3D } from "./Tilt3D";
 import dashboard from "../assets/screenshots/dashboard.png";
 import posRestaurant from "../assets/screenshots/pos-restaurant.png";
 import reports from "../assets/screenshots/reports.png";
@@ -63,36 +64,38 @@ export function ProductCarousel() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="relative overflow-hidden rounded-2xl border border-black/10 bg-white shadow-2xl shadow-brand-900/10">
-        <div
-          className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
-          style={{ transform: `translateX(-${index * 100}%)` }}
-        >
-          {slides.map((slide) => (
-            <img
-              key={slide.src}
-              src={slide.src}
-              alt={slide.caption}
-              className="w-full shrink-0"
-            />
-          ))}
-        </div>
+      <Tilt3D>
+        <div className="relative overflow-hidden rounded-2xl border border-black/10 bg-white shadow-2xl shadow-brand-900/20">
+          <div
+            className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
+            style={{ transform: `translateX(-${index * 100}%)` }}
+          >
+            {slides.map((slide) => (
+              <img
+                key={slide.src}
+                src={slide.src}
+                alt={slide.caption}
+                className="w-full shrink-0"
+              />
+            ))}
+          </div>
 
-        <button
-          onClick={() => go(-1)}
-          aria-label="Previous screenshot"
-          className="absolute left-3 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow-md hover:bg-white"
-        >
-          <ChevronLeft className="size-5" />
-        </button>
-        <button
-          onClick={() => go(1)}
-          aria-label="Next screenshot"
-          className="absolute right-3 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow-md hover:bg-white"
-        >
-          <ChevronRight className="size-5" />
-        </button>
-      </div>
+          <button
+            onClick={() => go(-1)}
+            aria-label="Previous screenshot"
+            className="absolute left-3 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow-md hover:bg-white"
+          >
+            <ChevronLeft className="size-5" />
+          </button>
+          <button
+            onClick={() => go(1)}
+            aria-label="Next screenshot"
+            className="absolute right-3 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow-md hover:bg-white"
+          >
+            <ChevronRight className="size-5" />
+          </button>
+        </div>
+      </Tilt3D>
 
       <div className="mt-4 flex items-center justify-between gap-4">
         <div>

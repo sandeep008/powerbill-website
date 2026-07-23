@@ -5,7 +5,7 @@ const WHATSAPP_DEMO_TEXT = encodeURIComponent(
   "Hi PowerBill team, I'd like to request a demo of PowerBill for my shop."
 );
 const WHATSAPP_SUPPORT_TEXT = encodeURIComponent("Hi PowerBill team, I need some support with PowerBill.");
-const SUPPORT_EMAIL = "support@powerbilltech.in";
+const SUPPORT_EMAIL = "support@powerbilltech.com";
 
 export function Contact() {
   return (
